@@ -9,7 +9,7 @@ def index(request):
     posts = Post.objects.order_by('-pub_date')[:10]
     template = 'posts/index.html'
     context = {
-        'text':"Это главная страница проекта Yatube",
+        #'text':"Это главная страница проекта Yatube",
         'posts': posts,
         }
     return render(request, template, context) 
