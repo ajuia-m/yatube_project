@@ -6,5 +6,5 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('She was fokin crazy')
 
-def group_posts(request, pk):
-    return HttpResponse(f'She was insane {pk}')
+def group_posts(request, slug):
+    return HttpResponse(f'She was insane {slug}')
