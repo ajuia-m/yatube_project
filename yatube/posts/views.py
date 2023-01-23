@@ -17,7 +17,11 @@ def index(request):
 
 def group_list(request):
     template = 'posts/group_list.html'
-    context = {'text':"Здесь будет информация о группах проекта Yatube"}
+    posts = Post.objects.order_by('-group')[:10]
+    context = {
+        'text':"Здесь будет информация о группах проекта Yatube",
+        'posts': posts,
+        }
     return render(request, template, context)
 
 

@@ -5,7 +5,7 @@
 {% block title %}{% endblock title %}
 {% block content %}
     <p> {{post.group}} </p>
-    {% for posts in post %}     
+    {% for post in posts %}     
         <ul>
             <li>
                 Автор: {{ post.author.get_full_name }}
@@ -13,10 +13,11 @@
             <li>
                 Дата публикации: {{ post.pub_date|date:"d E Y" }}
             </li>
+            {% comment %}<li>Группа: {{post.group}}</li>{% endcomment %}
         </ul>
         <p>{{ post.text }}</p>    
         {% if post.group %}   
-            <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+            <a href="{% url 'posts:group_list' post.group.slug %}">Все записи группы - {{post.group}}</a>
         {% endif %} 
         {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
