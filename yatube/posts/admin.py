@@ -23,4 +23,5 @@ class GroupAdmin(admin.ModelAdmin):
 
 # При регистрации модели Post источником конфигурации для неё назначаем
 # класс PostAdmin
-admin.site.register(Post, PostAdmin, Group, GroupAdmin)  
+admin.site.register(Post, PostAdmin) 
+admin.site.register(Group, GroupAdmin)  
